@@ -112,13 +112,18 @@ Kestrel Logistics' delivery-tracking application runs on a developer's laptop an
 
 ## What I learned
 
-> ✍️ *To be written in my own words.*
+## What I learned
 
-- Builtin vs external commands:
-- Why `/proc` files show size 0:
-- What the sticky bit on `/tmp` does:
-- Stop vs terminate:
-- Why I chose my own security group over the wizard's default:
+- **Builtin vs external commands:** `type cd` showed that `cd` is a shell builtin, because changing directory changes the shell's own location, so Bash has to do it itself. `ls` is a separate program (`/usr/bin/ls`) that the shell starts for me, and on this server it is wrapped in an alias that adds colours. Aliases only exist in my interactive shell, so scripts may behave differently.
+- **Why `/proc` files show size 0:** `/proc` is not stored on the disk. When I read a file like `/proc/cpuinfo`, the kernel creates the content at that moment, so there is nothing saved and the size shows 0.
+- **The sticky bit on `/tmp`:** the `t` at the end of `drwxrwxrwt` means everyone can create files in `/tmp`, but each user can only delete or rename their own files.
+- **Stop vs terminate:** stopping keeps the instance and its disk, so I can start it again, but the disk still costs money and the public IP changes. Terminating deletes the instance permanently, and by default its disk too.
+- **Choosing my own security group:** the launch wizard's default would have opened SSH to the whole internet (`0.0.0.0/0`). My group only allows my own IP (`/32`), which follows least privilege.
+- **Reading the prompt:** I once ran a command on the server when I meant to run it on my Mac. Now I check the prompt before every command to know which machine I am on.
+- **Reading errors one at a time:** one SSH command gave two different errors (a wrong file path and an incomplete hostname). Fixing each separately was faster than guessing.
+- **Evidence over claims:** saying "it's done" is not proof. Showing the output, the setting, or a test result is.
+- **Investigate before deleting:** when my budget showed unexpected spend, I identified the source first instead of deleting resources, because deletion cannot be undone.
+- **Billing is not real time:** AWS cost and credit data can take hours to update, so "no charge yet" does not mean "no charge".
 
 ## What I would improve
 
