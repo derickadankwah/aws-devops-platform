@@ -112,8 +112,6 @@ Kestrel Logistics' delivery-tracking application runs on a developer's laptop an
 
 ## What I learned
 
-## What I learned
-
 - **Builtin vs external commands:** `type cd` showed that `cd` is a shell builtin, because changing directory changes the shell's own location, so Bash has to do it itself. `ls` is a separate program (`/usr/bin/ls`) that the shell starts for me, and on this server it is wrapped in an alias that adds colours. Aliases only exist in my interactive shell, so scripts may behave differently.
 - **Why `/proc` files show size 0:** `/proc` is not stored on the disk. When I read a file like `/proc/cpuinfo`, the kernel creates the content at that moment, so there is nothing saved and the size shows 0.
 - **The sticky bit on `/tmp`:** the `t` at the end of `drwxrwxrwt` means everyone can create files in `/tmp`, but each user can only delete or rename their own files.
