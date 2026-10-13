@@ -106,7 +106,7 @@ Kestrel Logistics' delivery-tracking application runs on a developer's laptop an
 ## Cost considerations
 
 - Account is on the AWS credit-based free plan; usage draws down credits shared with another project.
-- Approximate us-east-1 on-demand prices: t3.micro ~$0.0104/hour, public IPv4 ~$0.005/hour, gp3 storage ~$0.08/GB-month (~$0.64/month for 8 GiB). Roughly $0.37/day while running.
+- Approximate us-east-1 on-demand prices: t3.micro about $0.0104/hour, public IPv4 about $0.005/hour, gp3 storage about $0.08/GB-month (about $0.64/month for 8 GiB). Roughly $0.37/day while running.
 - **Stop** halts compute charges and keeps the disk (still billed) and data; the public IP changes on restart. **Terminate** permanently deletes the instance and, by default, its root volume.
 - Practice: stop the instance at the end of every session.
 
